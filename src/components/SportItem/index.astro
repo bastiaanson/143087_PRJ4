@@ -42,6 +42,12 @@ const { name, image, href, origin } = Astro.props;
             margin-bottom: 1rem;
         }
 
+        &:hover {
+            img {
+                transform: scale(1);
+            }
+        }
+
         &--image {
             position: absolute;
             top: 0;
@@ -49,10 +55,15 @@ const { name, image, href, origin } = Astro.props;
             left: 0;
             right: 0;
             z-index: 0;
+            overflow: hidden;
             img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
+                transform: scale(1.1);
+                transition-property: transform;
+                transition-duration: 0.17s;
+                transition-timing-function: ease-in-out;
             }
         }
 
