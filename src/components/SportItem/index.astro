@@ -1,0 +1,19 @@
+---
+export interface Props {
+    name: string;
+    image: string;
+    origin: string;
+}
+
+const { name, image, origin } = Astro.props;
+---
+
+<div class="sportitem">
+    <div class="sportitem--image">
+        <img
+            src={`https://raw.githubusercontent.com/bastiaanson/143087_PRJ4/main/public/images/homepage/${image}`}
+            alt={`${name} - image`}
+        />
+    </div>
+    <div class="sportitem--content"></div>
+</div>

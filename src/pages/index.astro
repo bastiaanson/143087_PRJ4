@@ -1,4 +1,5 @@
 ---
+import SportItem from "../components/SportItem/index.astro";
 import BasicLayout from "../layout/BasicLayout.astro";
 ---
 
@@ -40,9 +41,38 @@ import BasicLayout from "../layout/BasicLayout.astro";
 
         <div class="sports">
             <div class="row">
-                <div class="col-sm">test</div>
-                <div class="col-sm">test</div>
-                <div class="col-sm">test</div>
+                <div class="col-sm">
+                    <SportItem
+                        client:load
+                        name="Basketball"
+                        origin="U.S.A."
+                        image="basketball"
+                    />
+                </div>
+                <div class="col-sm">
+                    <SportItem
+                        client:load
+                        name="Football"
+                        origin="England"
+                        image="basketball"
+                    />
+                </div>
+                <div class="col-sm">
+                    <SportItem
+                        client:load
+                        name="Handball"
+                        origin="Germany"
+                        image="handball"
+                    />
+                </div>
+                <div class="col-sm">
+                    <SportItem
+                        client:load
+                        name="Volleyball"
+                        origin="U.S.A."
+                        image="volleyball"
+                    />
+                </div>
             </div>
         </div>
 
