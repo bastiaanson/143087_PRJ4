@@ -1,0 +1,65 @@
+<nav class="navigation">
+    <div class="container">
+        <div class="navigation--inner">
+            <a class="navigation--logo" href="/">
+                <img src="/public/images/logo.png" alt="Sports" />
+            </a>
+            <ul class="navigation--items">
+                <li>
+                    <div class="navigation--dropdown">
+                        <div class="navigation--dropdown-title">Sports</div>
+                        <ul class="navigation--dropdown-items">
+                            <li>
+                                <a href="/basketball">Basketball</a>
+                            </li>
+                            <li>
+                                <a href="/football">Football</a>
+                            </li>
+                            <li>
+                                <a href="/handball">Handball</a>
+                            </li>
+                            <li>
+                                <a href="/volleyball">Volleyball</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="/who-are-we">About</a>
+                </li>
+                <li>
+                    <a href="/contact">Contact</a>
+                </li>
+            </ul>
+            <div class="navigation--action"></div>
+        </div>
+    </div>
+</nav>
+
+<style lang="scss">
+    .navigation {
+        width: 100%;
+        background-color: hsl(var(--primary-color));
+        position: sticky;
+        top: 0;
+
+        &--inner {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &--logo {
+            width: 48px;
+            height: 48px;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+
+        &--items {
+            display: flex;
+        }
+    }
+</style>

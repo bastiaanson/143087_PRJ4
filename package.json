@@ -1,0 +1,27 @@
+{
+    "name": "143087_prj4",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "astro dev",
+        "start": "astro dev",
+        "build": "astro build",
+        "preview": "astro preview"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/bastiaanson/143087_PRJ4.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/bastiaanson/143087_PRJ4/issues"
+    },
+    "homepage": "https://github.com/bastiaanson/143087_PRJ4#readme",
+    "dependencies": {
+        "astro": "^1.6.8",
+        "bootstrap": "^5.2.2",
+        "sass": "^1.56.1"
+    }
+}

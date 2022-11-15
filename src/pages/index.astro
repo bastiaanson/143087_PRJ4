@@ -1,0 +1,52 @@
+---
+import BasicLayout from "../layout/BasicLayout.astro";
+---
+
+<BasicLayout title={"143087"} description={""}>
+    <div class="container">
+        <div class="hero">
+            <h1 class="hero--title">So you wanna learn about ballsports?</h1>
+            <p class="hero--description">
+                Everything you need to know, you will find here.
+            </p>
+            <div class="hero--buttons">
+                <a href="" class="btn">Show all sports</a>
+                <a
+                    href="https://www.youtube.com/watch?v=cvh0nX08nRw"
+                    class="btn"
+                    target="_blank">Wanna see how we research in realtime?</a
+                >
+            </div>
+        </div>
+
+        <div class="sports">
+            <div class="row">
+                <div class="col-sm">test</div>
+                <div class="col-sm">test</div>
+                <div class="col-sm">test</div>
+            </div>
+        </div>
+    </div>
+</BasicLayout>
+
+<style lang="scss">
+    .hero {
+        padding: 2rem;
+        text-align: center;
+
+        &--title {
+            font-size: 3.052rem;
+            font-weight: 700;
+
+            @media screen and (max-width: 455px) {
+                font-size: 2.052rem;
+            }
+        }
+
+        &--description {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: auto;
+        }
+    }
+</style>
