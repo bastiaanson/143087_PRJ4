@@ -5,13 +5,25 @@ import logo from "../../images/logo.png";
 <nav class="navigation">
     <div class="container">
         <div class="navigation--inner">
-            <a class="navigation--logo" href="/">
+            <a class="navigation--logo" href="/143087_PRJ4/">
                 <img src={logo} alt="Sports" />
             </a>
             <ul class="navigation--items">
                 <li>
                     <div class="navigation--dropdown">
-                        <div class="navigation--dropdown-title">Sports</div>
+                        <div class="navigation--dropdown-title">
+                            <span>Sports</span>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
                         <ul class="navigation--dropdown-items">
                             <li>
                                 <a href="/143087_PRJ4/basketball">Basketball</a>
@@ -35,21 +47,77 @@ import logo from "../../images/logo.png";
                     <a href="/143087_PRJ4/contact">Contact</a>
                 </li>
             </ul>
-            <div class="navigation--action"></div>
+            <button class="navigation--action">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M3.75 9h16.5m-16.5 6.75h16.5"></path>
+                </svg>
+            </button>
         </div>
     </div>
 </nav>
 
+<script>
+    document
+        .querySelector(".navigation--dropdown")
+        ?.addEventListener("mouseover", (e) => {
+            if (window.innerWidth > 786) {
+                document
+                    .querySelector(".navigation--dropdown-items")
+                    ?.classList.add("active");
+            }
+        });
+    document
+        .querySelector(".navigation--dropdown")
+        ?.addEventListener("mouseout", (e) => {
+            if (window.innerWidth > 786) {
+                document
+                    .querySelector(".navigation--dropdown-items")
+                    ?.classList.remove("active");
+            }
+        });
+    document
+        .querySelector(".navigation--dropdown")
+        ?.addEventListener("click", (e) => {
+            if (window.innerWidth < 787) {
+                document
+                    .querySelector(".navigation--dropdown-items")
+                    ?.classList.toggle("active");
+            }
+        });
+
+    document
+        .querySelector(".navigation--action")
+        ?.addEventListener("click", (e) => {
+            document
+                .querySelector(".navigation--items")
+                ?.classList.toggle("active");
+        });
+</script>
+
 <style lang="scss">
     .navigation {
         width: 100%;
-        background-color: hsl(var(--primary-color));
-        position: sticky;
-        top: 0;
+        padding: 1rem 0;
+        display: block;
+        z-index: 9999;
+        position: relative;
+        height: 80px;
 
         &--inner {
             display: flex;
+            align-items: center;
             justify-content: space-between;
+            z-index: 99999;
         }
 
         &--logo {
@@ -62,8 +130,138 @@ import logo from "../../images/logo.png";
             }
         }
 
+        ul {
+            list-style-type: none;
+        }
+
         &--items {
+            display: none;
+            padding: 0;
+            margin: 0;
+            flex-direction: column;
+            position: absolute;
+            background-color: hsl(var(--background));
+            height: auto;
+            top: 80px;
+            left: 0;
+            z-index: 99999;
+            width: 100%;
+
+            @media (min-width: 786px) {
+                display: flex;
+                gap: 2ch;
+                position: relative;
+                flex-direction: row;
+                top: unset;
+                left: unset;
+                height: auto;
+                width: auto;
+            }
+
+            &.active {
+                display: flex;
+            }
+            > li > a,
+            > li > div > div {
+                color: hsl(var(--foreground-2));
+                cursor: pointer;
+                display: flex;
+                user-select: none;
+                z-index: 99999;
+                line-height: 1.5rem;
+                font-size: 1rem;
+                padding: 0.5rem 0.75rem;
+                @media (min-width: 786px) {
+                    border-radius: 0.5rem;
+                    font-size: 0.875rem;
+                    padding: 0.25rem 0.5rem;
+                }
+
+                &:hover {
+                    background-color: hsla(var(--primary-color), 0.1);
+                    text-decoration: none;
+                }
+            }
+        }
+
+        &--dropdown {
+            position: relative;
+            z-index: 99999;
+
+            &-title {
+                display: flex;
+                align-items: center;
+                gap: 1ch;
+
+                svg {
+                    width: 14px;
+                }
+            }
+            &-items {
+                width: 100%;
+                height: 0;
+                overflow: hidden;
+                padding: 0;
+                background-color: hsl(var(--background));
+
+                @media (min-width: 786px) {
+                    position: absolute;
+                    margin: 0;
+                    top: 100%;
+                    pointer-events: none;
+                    opacity: 0;
+                    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+                    z-index: 20;
+                    padding: 1.5ch;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    border-radius: 0.5rem;
+                    min-width: max-content;
+                }
+
+                a {
+                    color: hsl(var(--foreground-2));
+                    cursor: pointer;
+                    display: flex;
+                    user-select: none;
+                    line-height: 1.5rem;
+                    font-size: 1rem;
+                    padding: 0.5rem 0.75rem;
+                    padding-left: 2rem;
+                    @media (min-width: 786px) {
+                        border-radius: 0.5rem;
+                        font-size: 0.875rem;
+                        padding: 0.25rem 0.5rem;
+                    }
+
+                    &:hover {
+                        text-decoration: none;
+                        background-color: hsla(var(--primary-color), 0.1);
+                        text-decoration: none;
+                    }
+                }
+                &.active {
+                    opacity: 1;
+                    height: auto;
+                    pointer-events: all;
+                }
+            }
+        }
+
+        &--action {
+            background: transparent;
+            border: none;
             display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            outline: none;
+            svg {
+                width: 24px;
+            }
+            @media (min-width: 786px) {
+                display: none;
+            }
         }
     }
 </style>

@@ -84,8 +84,13 @@ h5 {
     font-family: var(--font-title);
     font-weight: 700;
     line-height: 1.3;
-    color: hsl(var(--primary-color));
     hyphens: manual;
+
+    span {
+        color: hsl(var(--primary-color));
+        white-space: nowrap;
+        position: relative;
+    }
 }
 
 h1 {
@@ -112,4 +117,59 @@ h5 {
 small,
 .text_small {
     font-size: 0.8rem;
+}
+
+.btn-custom,
+.btn-custom--outline {
+    display: flex;
+    align-items: center;
+    gap: 1ch;
+    background-color: hsl(var(--foreground));
+    color: hsl(var(--foreground-on-primary-1));
+    padding: .75rem 1rem;
+    font-family: inherit;
+    font-size: inherit;
+    border-radius: 5555px;
+    cursor: pointer;
+    transition-property: opacity;
+    transition-duration: .3s;
+    transition-timing-function: ease-in-out;
+    text-decoration: none;
+    max-width: max-content;
+    outline: none;
+    border: 1px solid transparent;
+    user-select: none;
+
+    &:hover {
+        outline: none;
+        color: hsl(var(--foreground-on-primary-1));
+        text-decoration: none;
+        opacity: .8;
+    }
+
+    svg {
+        width: .75rem;
+        height: .75rem;
+        display: block;
+        fill: currentColor;
+    }
+}
+
+.btn-custom--outline {
+    color: hsl(var(--foreground));
+    background-color: hsl(var(--foreground-on-primary-1));
+    border: 1px solid hsla(var(--primary-color), .1);
+
+    svg {
+        color: hsl(var(--primary-color));
+    }
+
+    &:hover {
+        color: hsl(var(--foreground));
+    }
+}
+
+main {
+    z-index: 0;
+    position: relative;
 }
