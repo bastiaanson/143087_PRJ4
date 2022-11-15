@@ -1,7 +1,34 @@
 ---
+import SportArticle from "../components/SportArticle/index.astro";
 import BasicLayout from "../layout/BasicLayout.astro";
 ---
 
 <BasicLayout title={"Football - 143087"} description={""}>
-    <div class="container"></div>
+    <div class="container">
+        <SportArticle client:load name="Football" image="football.webp">
+            <p>
+                Soccer,[a] is a team sport played between two teams of 11
+                players who primarily use their feet to propel the ball around a
+                rectangular field called a pitch. The objective of the game is
+                to score more goals than the opposition by moving the ball
+                beyond the goal line into the opposing side's rectangular framed
+                goal. Traditionally, the game has been played over two 45-minute
+                halves, for a total match time of 90 minutes. With an estimated
+                250 million players active in over 200 countries, it is
+                considered the world's most popular sport. The game is played
+                with a football that is 68-70 cm (27-28 in) in circumference.
+                The two teams compete to get the ball into the other team's goal
+                (between the posts and under the bar), thereby scoring a goal.
+                When the ball is in play, the players mainly use their feet, but
+                may use any other part of their body to control, strike or pass
+                the ball apart from their hands or arms. Only the goalkeepers
+                may use their hands and arms, and only then within the penalty
+                area. The team that has scored more goals at the end of the game
+                is the winner. Depending on the format of the competition, an
+                equal number of goals scored may result in a draw being
+                declared, or the game goes into extra time or a penalty
+                shootout.
+            </p>
+        </SportArticle>
+    </div>
 </BasicLayout>

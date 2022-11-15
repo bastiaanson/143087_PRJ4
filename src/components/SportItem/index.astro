@@ -35,6 +35,13 @@ const { name, image, href, origin } = Astro.props;
         display: block;
         border-radius: 0.5rem;
         background-color: hsla(var(--foreground), 0.1);
+        @media (max-width: 960px) {
+            margin-bottom: 2rem;
+        }
+        @media (max-width: 540px) {
+            margin-bottom: 1rem;
+        }
+
         &--image {
             position: absolute;
             top: 0;
