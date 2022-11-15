@@ -110,7 +110,10 @@
         display: block;
         z-index: 9999;
         position: relative;
+        background-color: hsl(var(--primary-color));
         height: 80px;
+        color: hsl(var(--foreground-on-primary-1));
+        margin-bottom: 1rem;
 
         &--inner {
             display: flex;
@@ -139,7 +142,7 @@
             margin: 0;
             flex-direction: column;
             position: absolute;
-            background-color: hsl(var(--background));
+            background-color: hsl(var(--primary-color));
             height: auto;
             top: 80px;
             left: 0;
@@ -162,7 +165,7 @@
             }
             > li > a,
             > li > div > div {
-                color: hsl(var(--foreground-2));
+                color: hsl(var(--foreground-on-primary-1));
                 cursor: pointer;
                 display: flex;
                 user-select: none;
@@ -177,7 +180,7 @@
                 }
 
                 &:hover {
-                    background-color: hsla(var(--primary-color), 0.1);
+                    background-color: hsla(var(--foreground-on-primary-1), 0.1);
                     text-decoration: none;
                 }
             }
@@ -201,7 +204,7 @@
                 height: 0;
                 overflow: hidden;
                 padding: 0;
-                background-color: hsl(var(--background));
+                background-color: hsl(var(--primary-color));
 
                 @media (min-width: 786px) {
                     position: absolute;
@@ -219,7 +222,7 @@
                 }
 
                 a {
-                    color: hsl(var(--foreground-2));
+                    color: hsl(var(--foreground-on-primary-1));
                     cursor: pointer;
                     display: flex;
                     user-select: none;
@@ -235,7 +238,10 @@
 
                     &:hover {
                         text-decoration: none;
-                        background-color: hsla(var(--primary-color), 0.1);
+                        background-color: hsla(
+                            var(--foreground-on-primary-1),
+                            0.1
+                        );
                         text-decoration: none;
                     }
                 }
@@ -255,6 +261,7 @@
             justify-content: center;
             cursor: pointer;
             outline: none;
+            color: hsl(var(--foreground-on-primary-1));
             svg {
                 width: 24px;
             }
