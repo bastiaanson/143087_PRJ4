@@ -1,5 +1,5 @@
 # 143087_PRJ4
-- [ ] Home page
+- [X] Home page
 - [ ] About/vision	️
 - [ ] Mission
 - [ ] Design justifications

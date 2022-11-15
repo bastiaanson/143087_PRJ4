@@ -5,7 +5,7 @@ import BasicLayout from "../layout/BasicLayout.astro";
 
 <BasicLayout title={"143087"} description={""}>
     <div class="container">
-        <div class="hero">
+        <section class="hero">
             <h1 class="hero--title">
                 So you wanna learn about <span
                     ><svg
@@ -23,7 +23,7 @@ import BasicLayout from "../layout/BasicLayout.astro";
                 Everything you need to know, you will find here.
             </p>
             <div class="hero--buttons">
-                <a href="" class="btn-custom">Show all sports</a>
+                <a href="#sports" class="btn-custom">Show all sports</a>
                 <a
                     href="https://www.youtube.com/watch?v=cvh0nX08nRw"
                     class="btn-custom--outline"
@@ -34,49 +34,51 @@ import BasicLayout from "../layout/BasicLayout.astro";
                             d="m9.997 6.91-7.583 3.447A1 1 0 0 1 1 9.447V2.553a1 1 0 0 1 1.414-.91L9.997 5.09c.782.355.782 1.465 0 1.82Z"
                         ></path>
                     </svg>
-                    <span> Research in realtime</span>
+                    <span>Research in realtime</span>
                 </a>
             </div>
-        </div>
+        </section>
 
-        <div class="sports">
+        <section class="sports" id="sports">
             <div class="row">
-                <div class="col-sm">
+                <div class="col-lg">
                     <SportItem
                         client:load
                         name="Basketball"
+                        href="basketball"
                         origin="U.S.A."
-                        image="basketball"
+                        image="basketball.webp"
                     />
                 </div>
-                <div class="col-sm">
+                <div class="col-lg">
                     <SportItem
                         client:load
                         name="Football"
+                        href="football"
                         origin="England"
-                        image="basketball"
+                        image="football.webp"
                     />
                 </div>
-                <div class="col-sm">
+                <div class="col-lg">
                     <SportItem
                         client:load
                         name="Handball"
+                        href="handball"
                         origin="Germany"
-                        image="handball"
+                        image="handball.webp"
                     />
                 </div>
-                <div class="col-sm">
+                <div class="col-lg">
                     <SportItem
                         client:load
                         name="Volleyball"
+                        href="volleyball"
                         origin="U.S.A."
-                        image="volleyball"
+                        image="volleyball.webp"
                     />
                 </div>
             </div>
-        </div>
-
-        <div style="height: 300vh;"></div>
+        </section>
     </div>
 </BasicLayout>
 
@@ -127,5 +129,9 @@ import BasicLayout from "../layout/BasicLayout.astro";
             flex-wrap: wrap;
             justify-content: center;
         }
+    }
+
+    .sports {
+        padding: 3rem 0;
     }
 </style>

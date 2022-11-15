@@ -2,18 +2,80 @@
 export interface Props {
     name: string;
     image: string;
+    href: string;
     origin: string;
 }
 
-const { name, image, origin } = Astro.props;
+const { name, image, href, origin } = Astro.props;
 ---
 
-<div class="sportitem">
+<a class="sportitem" href={href}>
     <div class="sportitem--image">
         <img
             src={`https://raw.githubusercontent.com/bastiaanson/143087_PRJ4/main/public/images/homepage/${image}`}
             alt={`${name} - image`}
         />
     </div>
-    <div class="sportitem--content"></div>
-</div>
+    <div class="sportitem--content">
+        <div class="sportitem--content-name">
+            {name}
+        </div>
+        <div class="sportitem--content-origin">
+            {origin}
+        </div>
+    </div>
+</a>
+
+<style lang="scss">
+    .sportitem {
+        width: 100%;
+        height: 400px;
+        position: relative;
+        overflow: hidden;
+        display: block;
+        border-radius: 0.5rem;
+        background-color: hsla(var(--foreground), 0.1);
+        &--image {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 0;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &--content {
+            z-index: 2;
+            position: absolute;
+            bottom: 1ch;
+            left: 1ch;
+            right: 1ch;
+            padding: 1ch;
+            backdrop-filter: blur(5px);
+            color: hsl(var(--background));
+            border-radius: 0.5rem;
+            overflow: hidden;
+
+            &::before {
+                content: "";
+                background-color: hsla(var(--foreground), 0.5);
+                z-index: -1;
+                content: "";
+                position: absolute;
+                inset: 0;
+            }
+
+            &-name {
+                font-family: var(--font-title);
+            }
+            &-origin {
+                font-size: 0.875rem;
+            }
+        }
+    }
+</style>
