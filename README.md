@@ -2,17 +2,17 @@
 
 ## Pages
 - [X] Home page
-- [ ] About/vision	️
+- [X] About/vision	️
 - [ ] Mission
 - [ ] Design justifications
 - [ ] Product/services
-- [ ] Who we are
-- [ ] Contact
+- [X] Who we are
+- [X] Contact
 - [ ] Links
 - [ ] Disclaimer
 
 ## Requirements
-- [ ] Both pages use Bootstrap grids.
+- [X] Both pages use Bootstrap grids.
 - [X] The pages must show responsive behaviour, i.e. the layout changes according to the screen size (e.g. 1 column on mobile, 3 columns on desktop).
 - [X] They also use custom CSS styles that you create yourself, and both pages are linked to a single styles.cssfile.
 - [X] You can go from one page to the other by using hyperlinks.
